@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors Part 1</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        var computerChoices = ["r", "p", "s"];
+        
+        var wins = 0;
+        var losses = 0;
+        var ties = 0;
+
+        for (var index = 0; index < 10; index++) {
+            var userChoice = prompt("Lets play rock paper scissors! Please enter r, p, or s to choose.");
+            var userChoice = userChoice.toLocaleLowerCase();
+            var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+            if (userChoice === "r" || userChoice === "p" || userChoice === "s") {
+                alert("Computer Picks: " + computerGuess)
+            } else {
+                alert("You didn't enter r, p, or s.")
+            }
+
+            if (userChoice === computerGuess) {
+                alert("You tied!");
+                ties++;
+            }
+
+            if (userChoice === "r" && computerGuess === "p") {
+                alert("You lose!");
+                losses++;
+            }
+            if (userChoice === "r" && computerGuess === "s") {
+                alert("You win!");
+                wins++;
+            }
+            if (userChoice === "p" && computerGuess === "r") {
+                alert("You win!");
+                wins++;
+            }
+            if (userChoice === "p" && computerGuess === "s") {
+                alert("You lose!");
+                losses++;
+            }
+            if (userChoice === "s" && computerGuess === "r") {
+                alert("You Lose!");
+                losses++;
+            }
+            if (userChoice === "s" && computerGuess === "p") {
+                alert("You Win!");
+                wins++;
+            }
+            }
+            
+            console.log(wins)
+            console.log(losses)
+            console.log(index)
+            console.log(ties)
+            if (index == 10) {
+                alert("Wins: " + wins + " Losses: " + losses + " Ties: " + ties);
+
+            }
+
+    </script>
+</body>
+
+</html>
